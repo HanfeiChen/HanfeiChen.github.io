@@ -19,7 +19,9 @@ $enable-rounded: false;
     margin: 0;
     padding: 0;
 }
-
+.text-white{
+    color: white;
+}
 body {
     color: white;
 }
@@ -150,10 +152,30 @@ img, img:hover {
     animation: fade-up 0.7s ease-out forwards running;
 }
 // menu
+
+
 .navbar-brand img {
-    max-height:280px;
-    margin-left: -80px;
+    position: relative;
+    left: -25%;
 }
+
+// .navbar-brand .btn{
+    
+//     position: absolute;
+    
+//      top: 36%;
+//      left: 14%;
+//     // transform: translate(-50%, -50%);
+//     // -ms-transform: translate(-50%, -50%);
+//     // background-color: #555;
+//     // color: white;
+//     // font-size: 16px;
+//     // padding: 12px 24px;
+//     // border: none;
+//     // cursor: pointer;
+//     // border-radius: 5px;
+// }
+
 .sidebar {
     position: fixed;
     left: 0px;
@@ -200,10 +222,15 @@ img, img:hover {
         .hamburger-bar {
             &:before {
                 transform: rotate(-45deg) translate(0px,0px);
+                background: #292C30 !important; 
             }
             &:after {
+                background: #292C30 !important;
                 transform: rotate(45deg) translate(0px,0px);
             }
+        }
+        .share{
+            opacity: 1 !important;
         }
     }
 }
@@ -294,6 +321,7 @@ img, img:hover {
         font-weight:700;
         font-size:22px;
         line-height:1.4;
+        display: inline-block;
         a { 
             background-image: linear-gradient(180deg, transparent 89%, $primary 0);
             background-repeat: no-repeat;
@@ -310,6 +338,14 @@ img, img:hover {
         font-size:16px;
         line-height:1.8;
         margin-top:15px;
+    }
+    .card-subtitle{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.8;
+        color: #8E9AA7;
+        display: inline-block;
+        margin-left: 0.8em;
     }
     .card-footer {
        font-size:14px;
@@ -430,11 +466,9 @@ img, img:hover {
 
 // blog 
 .article-post, .entry-header, .comments, .rating, .authorbox {
-    max-width: 740px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 800px;
+    
+    
 }
 .posttitle {
     font-size:50px;
@@ -442,14 +476,20 @@ img, img:hover {
     line-height:1.2;
 }
 .entry-featured-image {  
-    width:940px;  
+    max-width: 800px;  
     max-width: 100%;
-    text-align:center;
-    margin-left:auto;
-    margin-right: auto;
+    // text-align:center;
+    // margin-left:auto;
+    // margin-right: auto;
     margin-top:50px;
     margin-bottom:50px;
 }
+
+.featured-image {
+    max-width: 800px;  
+    max-height: 450px;
+}
+
 .image-shadow {   
     -webkit-box-shadow: 0 7px 50px 0 rgba(84,110,122,.15);
     -moz-box-shadow: 0 7px 50px 0 rgba(84,110,122,.15);
@@ -545,17 +585,17 @@ img, img:hover {
         }
     }
 }
-.related-posts {
-    h2 {
-    }
-    margin-top:120px;
-    .badge {
-        font-size: 15px;
-        padding:5px 7px;
-        display:inline-block;
-        margin: 0 3px;
-    }
-}
+// .related-posts {
+//     h2 {
+//     }
+//     margin-top:120px;
+//     .badge {
+//         font-size: 15px;
+//         padding:5px 7px;
+//         display:inline-block;
+//         margin: 0 3px;
+//     }
+// }
 
 //share
 .share { 
@@ -581,11 +621,13 @@ img, img:hover {
     &:hover {
         color: darken($primary,20%);
     }
+    // &:active;
 }
 .bd-search {
     visibility: hidden;
     opacity: 0;
     transition:opacity 0.5s linear;
+    
     &.search--show {
         visibility: visible;
         opacity: 1;
@@ -724,23 +766,44 @@ body.active-side {
         z-index:0;
     }
     .share {
-        display: flex;
-        align-items:center;
+         display: none;
+         align-items:center;
+         
+    }
+
+    body.active-side{
+        .share{
+            display:flex;
+        }
     }
     .share ul li {
-        display:inline-block;
-        margin: 10px 15px !important;
+         display:inline-block;
+         margin: 15px 5px !important;
+        
     }
     
     #menu ul {
         padding: 80px 30px 80px 30px;
     }
-    .related-posts {
-        h2 {
-            font-size: 1.4rem;
+
+    .hamburger-bar {
+        
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 2px;
+            background: white !important;
+            border-radius: 1px;
         }
     }
+
 }
+
+.fa-search {
+    color: black;
+}
+
 @media (max-width: 480px) {
     .newsletter {
         .mc-field-group input[type="email"] {

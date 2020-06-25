@@ -37,10 +37,22 @@ jQuery(document).ready(function($){
 	});
 
 	//toggle search
-	$('.show-search').on('click', function() {  
-		$('.bd-search').toggleClass('search--show');		
+	// $('.show-search').on('click', function() {  
+	// 	$('.bd-search').toggleClass('active');		
+	// });
+    $('.show-search').click(function(){
+		$('.nav-icon').toggleClass('active');
 	});
-    
+	$(".show-search").click(function(){
+		$("#menu").toggleClass('active');
+	});
+	$(".show-search").click(function(){
+		$("#blackover-nav").toggleClass('active');
+	});
+	$(".show-search").click(function(){
+		$("body").toggleClass('active-side');
+	});
+
     // spoilers
      $(document).on('click', '.spoiler', function() {
         $(this).removeClass('spoiler');
