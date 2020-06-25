@@ -5,7 +5,7 @@
 $brown: #B59F62;
 $teal: #40FFDC;
 $black: #111;
-$primary: $teal;
+$primary: #8E9AA7;
 $dark:    $black;
 $enable-rounded: false;
 
@@ -15,6 +15,43 @@ $enable-rounded: false;
 @import 'bootstrap/bootstrap';
 @import 'stars';
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: white;
+}
+
+.card, .card-footer {
+    background-color: #f0f0f0;
+}
+
+.horizontal-nav li {
+    display: inline;
+    padding-inline-start: 0 !important;
+    color: $black;
+    list-style: none;
+    a {
+        width: 100%;
+        // padding: 2vh 0px 2vh 0px;
+        margin-right: 1.2em;
+        line-height: 20px;
+        color: #8E9AA7;
+        font-weight: 400;
+        font-size: 18px;
+        position: relative;
+        background-image: linear-gradient(180deg, transparent 89%, $primary 0);
+        background-repeat: no-repeat;
+        background-size: 0 100%;
+        transition: background-size .6s ease;
+        text-decoration: none;
+        &:hover {
+            background-size: 100% 100%;
+        }
+    }
+}
 
 // general
 body, input, button, select, optgroup, textarea {   
@@ -22,7 +59,7 @@ body, input, button, select, optgroup, textarea {
 }
 body {
     line-height:1.7;
-    background: #f4f4f4;
+    background: #000000;
 }
 a {
     color: darken($primary, 24%);
@@ -114,9 +151,8 @@ img, img:hover {
 }
 // menu
 .navbar-brand img {
-    max-height:80px;
-    margin-bottom:40px;
-    margin-top:40px;
+    max-height:280px;
+    margin-left: -80px;
 }
 .sidebar {
     position: fixed;
@@ -523,14 +559,16 @@ img, img:hover {
 
 //share
 .share { 
-    position:fixed;left:15px;bottom:40%;z-index: 1026;
-    text-align:center;    
+    position:fixed;left:24px;bottom:40%;z-index: 1026;
+    text-align:center;
     ul {
         list-style:none;
-        padding-left:0;
+        // padding-left:0;
+        text-align: center;
         li {
             margin:15px 0;
             a {
+                font-size: 120%;
                 color:$dark;
             }
         }

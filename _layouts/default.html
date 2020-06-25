@@ -4,9 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link rel="icon" href="{{ site.baseurl }}/assets/images/logo.png">
 
+<link rel="icon" href="{{ site.baseurl }}/assets/images/logo.png">
 <title>{{ page.title }} | {{site.name}}</title>
+
+
 
 {% seo %}
     
@@ -50,14 +52,16 @@ ga('send', 'pageview');
 <nav id="menu">
     <ul>
         <h3>Navigation</h3>
-        <li><a href="{{ site.baseurl }}/">Home</a></li>
-        <li><a href="{{ site.baseurl }}/about">About <span class="badge badge-primary">Memoirs Jekyll Theme</span></a></li>
-        <li><a target="_blank" href="https://bootstrapstarter.com/bootstrap-templates/jekyll-theme-memoirs/">Get Memoirs</a></li>      
-        <li><a href="{{ site.baseurl }}/contact">Contact</a></li>       
+        <li><a href="{{ site.baseurl }}/">Projects</a></li>
+        <li><a href="{{ site.baseurl }}/about">About Me</a></li>
+          
+            
     </ul>   
 </nav>
-
 {% include search-lunr.html %}
+{% include share.html %}
+
+
 
 
 <!-- End Sidebar Navigation
@@ -72,7 +76,7 @@ ga('send', 'pageview');
    
     <a class="navbar-brand" href="{{ site.baseurl }}/">
         <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
-    </a>  
+    </a>
    
 
     <!-- Site Tag
@@ -80,6 +84,18 @@ ga('send', 'pageview');
     {% if page.url == '/' %}
         <p class="sitetag">
             {{ site.description }}
+               
+    <!-- <a class="navbar-brand" href="{{ site.baseurl }}/">
+        <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
+    </a>   -->
+        </p>
+        <p>
+            <ul class="horizontal-nav">
+                <li><a href="{{ site.baseurl }}/">Projects</a></li>
+                <li><a href="{{ site.baseurl }}/about">About Me</a></li>
+                 
+                      
+            </ul>   
         </p>
     {% endif %}
 
